@@ -1,7 +1,7 @@
 const playersData = require('./players.json')
 var mysql = require('mysql');
 
-// host、user、password 請更換成自己的
+// host/user/password
 var con = mysql.createConnection({
     host: "localhost",
     user: "root",
