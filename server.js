@@ -80,7 +80,6 @@ app.get('/search/keyword/:team/:keyword', function (req, res) {
 // Team only
 app.get('/search/team/:team', function (req, res) {
 
-    console.log(req.params['team'])
     const team = req.params['team']
     // 是為了修復 CORS 的問題而設
     res.header("Access-Control-Allow-Origin", "*");
