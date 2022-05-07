@@ -61,20 +61,20 @@ app.get('/search/keywordOnly/:keyword', function (req, res) {
 });
 
 // Team + Keyword
-// app.get('/search/keyword/:team/:keyword', function (req, res) {
+app.get('/search/keyword/:team/:keyword', function (req, res) {
 
-//     const team = req.params['team'];
-//     const keyword = req.params['keyword']
-//     // 是為了修復 CORS 的問題而設
-//     res.header("Access-Control-Allow-Origin", "*");
-//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    const team = req.params['team'];
+    const keyword = req.params['keyword']
+    // 是為了修復 CORS 的問題而設
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
-//     mc.query(`SELECT * FROM players WHERE Team = ${team} AND Name LIKE %"${keyword}"%`, function (error, results, fields) {
-//         //var result = JSON.parse(results);
-//         if (error) throw error;
-//         return res.send(results);
-//     });
-// });
+    mc.query(`SELECT * FROM players WHERE Team = "${team}" AND Name LIKE "%${keyword}%"`, function (error, results, fields) {
+        //var result = JSON.parse(results);
+        if (error) throw error;
+        return res.send(results);
+    });
+});
 
 
 // Team only
